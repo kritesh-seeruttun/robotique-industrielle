@@ -1,0 +1,227 @@
+<?xml version="1.0"?>
+<robot name="index">
+
+	<material name="orange">
+		<color rgba="1 0.5 0 1"/>
+	</material>
+	<material name="gold">
+		<color rgba="1 0.7 0 1"/>
+	</material>
+	<material name="coral">
+		<color rgba="1 0.5 0.2 1"/>
+	</material>
+	<material name="red">
+		<color rgba="1 0 0 1" />
+	</material>
+	<material name="green">
+            	<color rgba="0 1 0 1"/>
+     	</material>
+	
+
+  	<link name="paume">
+    		<visual>
+      			<geometry>
+        			<box size="0.6 0.6 0.03"/>
+      			</geometry>
+			<material name="gold"/>
+    		</visual>
+ 	 </link>
+ 	 
+ 	          <link name="pouce">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.3" radius="0.02"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0.15 0 0" xyz="0 0 0.15"/>
+                </visual>
+                <visual>
+                        <geometry>
+                                <cylinder length="0.2" radius="0.015"/>
+                        </geometry>
+			<material name="red"/>
+			<origin rpy="0.15 0 0" xyz="0 -0.05 0.4"/>
+                </visual>   
+                <visual>
+      			<geometry>
+        			<sphere radius="0.03"/>
+		      </geometry>
+		      <material name="green"/>
+      			<origin rpy="0 0 0" xyz="0 -0.05 0.5"/>
+   		 
+		</visual>
+        </link>
+
+-        <link name="auriculaire">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.3" radius="0.02"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 0 0" xyz="0 0.0 0.15"/>
+                </visual>
+                <visual>
+                        <geometry>
+                                <cylinder length="0.2" radius="0.015"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 0 0" xyz="0 0.0 0.4"/>
+                </visual>
+                <visual>
+                        <geometry>
+                                <cylinder length="0.2" radius="0.01"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 0 0" xyz="0 0.0 0.5"/>
+                </visual>
+                <visual>
+      			<geometry>
+        			<sphere radius="0.03"/>
+		      </geometry>
+		      <material name="green"/>
+      			<origin rpy="0 0 0" xyz="0 0 0.6"/>   		 
+		</visual>  
+        </link>
+
+       <link name="annulaire">
+                <visual>
+                        <geometry>
+                                <cylinder length="0.3" radius="0.02"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 0 0" xyz="0 0.0 0.15"/>
+                </visual>
+                <visual>
+                        <geometry>
+                                <cylinder length="0.2" radius="0.015"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 0 0" xyz="0 0.0 0.4"/>
+                </visual>
+                <visual>
+                        <geometry>
+                                <cylinder length="0.2" radius="0.01"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 0 0" xyz="0 0.0 0.5"/>
+                </visual>
+                <visual>
+      			<geometry>
+        			<sphere radius="0.03"/>
+		      </geometry>
+		      <material name="green"/>
+      			<origin rpy="0 0 0" xyz="0 0 0.6"/>   		 
+		</visual>                
+        </link>
+
+
+	 <link name="majeur">
+		<visual>
+                        <geometry>
+                                <cylinder length="0.3" radius="0.02"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 0 0" xyz="0 0 0.15"/>
+                </visual>
+                <visual>
+                        <geometry>
+                                <cylinder length="0.2" radius="0.015"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 0 0" xyz="0 0 0.4"/>
+                </visual>
+                <visual>
+                        <geometry>
+                                <cylinder length="0.1" radius="0.01"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 0 0" xyz="0 0.0 0.55"/>
+                </visual>
+                <visual>
+      			<geometry>
+        			<sphere radius="0.03"/>
+		      </geometry>
+		      <material name="green"/>
+      			<origin rpy="0 0 0" xyz="0 0 0.6"/>   		 
+		</visual>           
+        </link>	
+
+	<link name="index">
+		<visual>
+                        <geometry>
+                                <cylinder length="0.3" radius="0.02"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 0 0" xyz="0 0.0 0.15"/>
+                </visual>
+                <visual>
+                        <geometry>
+                                <cylinder length="0.2" radius="0.015"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 0 0" xyz="0 0.0 0.4"/>
+                </visual>
+                <visual>
+                        <geometry>
+                                <cylinder length="0.1" radius="0.01"/>
+                        </geometry>
+			<material name="coral"/>
+			<origin rpy="0 0 0" xyz="0 0.0 0.55"/>
+                </visual>
+                <visual>
+      			<geometry>
+        			<sphere radius="0.03"/>
+		      </geometry>
+		      <material name="green"/>
+      			<origin rpy="0 0 0" xyz="0 0 0.6"/>   		 
+		</visual>
+        </link>
+
+
+
+
+
+	<!--<joint name="paume_to_phalange" type="fixed">
+                <parent link="paume"/>
+                <child link="phalange"/>
+                <origin rpy="0 0 0" xyz="0.05 -0.03 0"/>
+        </joint>-->
+  	<joint name="paume_to_pouce" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="paume"/>
+    		<child link="pouce"/>
+		<origin rpy="1 0 0" xyz="0.3 -0.3 0"/>
+  	</joint>
+
+
+	<joint name="paume_to_auriculaire" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="paume"/>
+    		<child link="auriculaire"/>
+		<origin rpy="-1 0.75 0" xyz="0.3 0.3 0"/>
+  	</joint>
+	<joint name="paume_to_annulaire" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="paume"/>
+    		<child link="annulaire"/>
+		<origin rpy="-1 0.75 0" xyz="0.3 0.15 0"/>
+  	</joint>
+	<joint name="paume_to_majeur" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="paume"/>
+    		<child link="majeur"/>
+		<origin rpy="-1 0.75 0" xyz="0.3 0 0"/>
+  	</joint>
+	<joint name="paume_to_index" type="revolute">
+		<axis xyz="0 1 0"/>
+		<limit effort="1000" upper="0" lower="1.57" velocity="0.5"/>
+    		<parent link="paume"/>
+    		<child link="index"/>
+		<origin rpy="-0.4 0.75 0" xyz="0.3 -0.15 0"/>
+  	</joint> 	 	
+
+</robot>
